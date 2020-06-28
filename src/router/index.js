@@ -1,13 +1,21 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 
+
 const Login = () => import('../views/login/Login');
 const Home = () => import('../views/home/Home');
 const Welcome = () => import('../components/content/welcome/Welcome');
 const User = () => import('../views/user/User');
+const Rights = () => import('../views/power/Rights');
+const Roles = () => import('../views/power/Roles');
+
 
 
 Vue.use(VueRouter);
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+};
 const routes = [
   {
     path: '/',
@@ -30,9 +38,18 @@ const routes = [
       {
         path: '/users',
         component: User
-      }
+      },
+      {
+        path: '/rights',
+        component: Rights
+      },
+      {
+        path: '/roles',
+        component: Roles
+      },
     ]
-  }
+  },
+
 ];
 
 const router = new VueRouter({
