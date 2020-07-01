@@ -3,9 +3,10 @@ import App from './App.vue'
 import router from './router'
 import './plugins/element.js'
 import ElementUI from 'element-ui';
-//导入全局样式表
-Vue.config.productionTip = false
+import TreeTable from 'vue-table-with-tree-grid'
 
+
+//导入全局样式表
 Vue.use(ElementUI);
 
 import axios from 'axios'
@@ -19,6 +20,9 @@ axios.interceptors.request.use(config => {
 });
 Vue.prototype.$http = axios;
 
+Vue.config.productionTip = false;
+
+Vue.component('tree-table', TreeTable);
 
 new Vue({
   router,
