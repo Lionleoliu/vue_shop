@@ -129,7 +129,7 @@
           confirmButtonText: '确定',
           cancelButtonText: '取消',
           type: 'warning'
-        }).catch(error => error)
+        }).catch(error => error);
         console.log(confirmResult);
         if (confirmResult !== 'confirm') {
           return this.$message.info('用户取消删除')

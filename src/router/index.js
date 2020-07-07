@@ -9,6 +9,7 @@ const User = () => import('../views/user/User');
 const Rights = () => import('../views/power/Rights');
 const Roles = () => import('../views/power/Roles');
 const Categorys = () => import('../views/categorys/Categorys');
+const Params = () => import('../views/categorys/Params');
 
 
 
@@ -51,6 +52,10 @@ const routes = [
       {
         path: '/categories',
         component: Categorys
+      },
+      {
+        path: '/params',
+        component: Params
       },
     ]
   },

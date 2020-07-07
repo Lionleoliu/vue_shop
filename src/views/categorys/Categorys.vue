@@ -177,7 +177,6 @@
         if (res.meta.status !== 200) {
           this.$message.error('类目获取失败')
         }
-        // console.log(res);
         this.cateList = res.data.result;
         this.totalPage = res.data.total;
       },
